@@ -110,6 +110,7 @@ function parseResponse(text: string) {
 }
 
 export async function POST(req: NextRequest) {
+    console.log("GROQ KEY:", !!process.env.GROQ_API_KEY);
   const ip =
     req.headers.get("x-forwarded-for")?.split(",")[0] ||
     req.headers.get("x-real-ip") ||
